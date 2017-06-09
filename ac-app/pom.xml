@@ -34,5 +34,10 @@
             <artifactId>ac-frontend</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.ysrbdlgn.audioconverter</groupId>
+            <artifactId>ac-common</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 </project>
