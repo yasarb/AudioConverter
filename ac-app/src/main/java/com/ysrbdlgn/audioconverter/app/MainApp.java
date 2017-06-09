@@ -1,12 +1,11 @@
 package com.ysrbdlgn.audioconverter.app;
 
-import com.ysrbdlgn.audioconverter.common.CommonTest;
+import com.ysrbdlgn.audioconverter.frontend.ui.MainStage;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Hello world!
- *
+ * Created by ysrbdlgn on 10-Jun-17.
  */
 public class MainApp {
 
@@ -15,9 +14,8 @@ public class MainApp {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext(new String[] {"/spring/application-context-app.xml"});
 
-        CommonTest comm = (CommonTest) applicationContext.getBean("commonTestBean");
-        comm.display();
-
+        MainStage stage = (MainStage) applicationContext.getBean("mainStageBean");
+        stage.run(args);
 
     }
 }
