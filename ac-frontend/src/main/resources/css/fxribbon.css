@@ -50,7 +50,8 @@
  ******************************************************************************/
 
 .ribbon > .outer-container > .tab-pane {
-    -fx-tab-min-height: 2.5em; /* 24 */
+    /* Tab sizes */
+    -fx-tab-min-height: 2em; /* 24 */
     -fx-tab-max-height: 2em; /* 24 */
     -fx-tab-min-width: 4em;
 }
