@@ -1,6 +1,6 @@
 package com.ysrbdlgn.audioconverter.app;
 
-import com.ysrbdlgn.audioconverter.frontend.ui.MainStage;
+import com.ysrbdlgn.audioconverter.frontend.ui.AudioConverterApp;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,7 +14,7 @@ public class MainApp {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext(new String[] {"/spring/application-context-app.xml"});
 
-        MainStage stage = (MainStage) applicationContext.getBean("mainStageBean");
+        AudioConverterApp stage = (AudioConverterApp) applicationContext.getBean("audioConverterAppBean");
         stage.run(args);
 
     }
