@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import com.ysrbdlgn.audioconverter.frontend.ribbon.Ribbon?>
+<BorderPane fx:id="root" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/MainApp.css"
+            xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.ysrbdlgn.audioconverter.frontend.controller.MainAppController">
+
+    <top>
+        <VBox BorderPane.alignment="TOP_LEFT">
+            <fx:include source="ribbon.fxml"/>
+        </VBox>
+    </top>
+    <center>
+
+    </center>
+    <bottom>
+
+    </bottom>
+
+</BorderPane>
