@@ -2,6 +2,7 @@ package com.ysrbdlgn.audioconverter.frontend.service;
 
 import com.ysrbdlgn.audioconverter.common.CryptoUtil;
 import com.ysrbdlgn.audioconverter.common.FileInfoUtil;
+import com.ysrbdlgn.audioconverter.common.validation.FileTypeValidator;
 import com.ysrbdlgn.audioconverter.frontend.ui.FileTable;
 import com.ysrbdlgn.audioconverter.frontend.ui.GenericDialog;
 import com.ysrbdlgn.audioconverter.frontend.ui.controller.MainSceneControllerImpl;
@@ -22,9 +23,15 @@ public class FileTableServiceImpl implements FileTableService {
     @Override
     public void addFile(File file) {
 
-        FileTableEntry entry = null;
-        String hash = null;
+        FileTableEntry entry;
+        String hash;
         boolean isEntryExists;
+
+        if(!FileTypeValidator.isValidFileType(file)) {
+            GenericDialog.showErrorDialog("Invalid File Type",
+                    "File type is not accepted.");
+            return;
+        }
 
         try {
             hash = CryptoUtil.calculateSHA1(file);
@@ -37,7 +44,8 @@ public class FileTableServiceImpl implements FileTableService {
                 addFileEntry(entry);
 
             } else {
-                GenericDialog.showInfoDialog("File exists", "This file is already exists:\n" + file.getAbsolutePath());
+                GenericDialog.showInfoDialog("File exists", "This file is already exists:\n"
+                        + file.getAbsolutePath());
             }
 
         } catch (IOException | NoSuchAlgorithmException e) {
@@ -65,12 +73,9 @@ public class FileTableServiceImpl implements FileTableService {
 
     }
 
-    @Override
-    public void addFileEntry(FileTableEntry entry) {
+    private void addFileEntry(FileTableEntry entry) {
 
         FileTable fileTable = mainSceneController.getFileTable();
-
-        // check if file exists
 
         entry.setId(fileTable.getItems().size() + 1);
         fileTable.getItems().add(entry);

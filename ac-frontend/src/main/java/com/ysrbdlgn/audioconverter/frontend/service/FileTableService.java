@@ -10,6 +10,5 @@ import java.io.File;
 public interface FileTableService {
 
     public void addFile(File file);
-    public void addFileEntry(FileTableEntry entry);
 
 }
