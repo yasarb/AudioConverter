@@ -1,6 +1,6 @@
-package com.ysrbdlgn.audioconverter.frontend.ribbon.skin;
+package com.ysrbdlgn.audioconverter.frontend.ui.ribbon.skin;
 
-import com.ysrbdlgn.audioconverter.frontend.ribbon.QuickAccessBar;
+import com.ysrbdlgn.audioconverter.frontend.ui.ribbon.QuickAccessBar;
 import javafx.collections.ListChangeListener;
 import javafx.scene.control.Button;
 import javafx.scene.control.SkinBase;

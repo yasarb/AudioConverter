@@ -1,4 +1,4 @@
-package com.ysrbdlgn.audioconverter.frontend.ribbon;
+package com.ysrbdlgn.audioconverter.frontend.ui.ribbon;
 
 import javafx.scene.layout.VBox;
 

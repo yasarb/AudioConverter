@@ -1,7 +1,6 @@
-package com.ysrbdlgn.audioconverter.frontend.ribbon;
+package com.ysrbdlgn.audioconverter.frontend.ui.ribbon;
 
-import com.ysrbdlgn.audioconverter.frontend.ribbon.skin.RibbonGroupSkin;
-import javafx.beans.property.BooleanProperty;
+import com.ysrbdlgn.audioconverter.frontend.ui.ribbon.skin.RibbonGroupSkin;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

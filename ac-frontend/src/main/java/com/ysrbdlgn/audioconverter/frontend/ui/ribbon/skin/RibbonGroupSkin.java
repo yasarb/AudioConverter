@@ -1,7 +1,7 @@
-package com.ysrbdlgn.audioconverter.frontend.ribbon.skin;
+package com.ysrbdlgn.audioconverter.frontend.ui.ribbon.skin;
 
 import com.sun.javafx.scene.control.skin.LabeledText;
-import com.ysrbdlgn.audioconverter.frontend.ribbon.RibbonGroup;
+import com.ysrbdlgn.audioconverter.frontend.ui.ribbon.RibbonGroup;
 import javafx.collections.ListChangeListener;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;

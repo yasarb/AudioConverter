@@ -11,10 +11,10 @@ import java.io.IOException;
 /**
  * Created by ysrbdlgn on 10-Jun-17.
  */
-public class AudioConverterApp extends Application {
+public class AudioConverterApplication extends Application {
 
     public void run(String[] args) {
-        Application.launch(AudioConverterApp.class, args);
+        Application.launch(AudioConverterApplication.class, args);
     }
 
     @Override

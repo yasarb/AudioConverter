@@ -1,4 +1,4 @@
-package com.ysrbdlgn.audioconverter.frontend.ribbon;
+package com.ysrbdlgn.audioconverter.frontend.ui.ribbon;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;

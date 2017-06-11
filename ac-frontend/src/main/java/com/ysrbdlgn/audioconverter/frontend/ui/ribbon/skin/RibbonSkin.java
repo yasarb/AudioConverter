@@ -1,7 +1,7 @@
-package com.ysrbdlgn.audioconverter.frontend.ribbon.skin;
+package com.ysrbdlgn.audioconverter.frontend.ui.ribbon.skin;
 
-import com.ysrbdlgn.audioconverter.frontend.ribbon.Ribbon;
-import com.ysrbdlgn.audioconverter.frontend.ribbon.RibbonTab;
+import com.ysrbdlgn.audioconverter.frontend.ui.ribbon.Ribbon;
+import com.ysrbdlgn.audioconverter.frontend.ui.ribbon.RibbonTab;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
