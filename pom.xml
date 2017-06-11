@@ -22,7 +22,6 @@
         <module>ac-frontend</module>
         <module>ac-converter</module>
         <module>ac-common</module>
-        <module>ac-app</module>
     </modules>
 
     <build>
@@ -36,7 +35,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <mainClass>com.ysrbdlgn.audioconverter.app.MainApp</mainClass>
+                            <mainClass>com.ysrbdlgn.audioconverter.frontend.ui.AudioConverterApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -134,7 +133,7 @@
                         <version>3.0.0</version>
                         <configuration>
                             <descriptors>
-                                <descriptor>ac-app/src/main/resources/dist/dist.xml</descriptor>
+                                <descriptor>ac-frontend/src/main/resources/dist/dist.xml</descriptor>
                             </descriptors>
                         </configuration>
                         <executions>

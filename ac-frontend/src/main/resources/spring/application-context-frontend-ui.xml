@@ -3,6 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="audioConverterAppBean" class="com.ysrbdlgn.audioconverter.frontend.ui.AudioConverterApplication"/>
+    <bean id="audioConverterAppBean" class="com.ysrbdlgn.audioconverter.frontend.AudioConverterApplication"/>
+
+    <bean id="mainSceneControllerBean"
+          class="com.ysrbdlgn.audioconverter.frontend.ui.controller.MainSceneControllerImpl"/>
 
 </beans>
