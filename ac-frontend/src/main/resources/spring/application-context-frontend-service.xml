@@ -3,7 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="classpath*:/spring/application-context-frontend-ui.xml"/>
-    <import resource="classpath*:/spring/application-context-frontend-service.xml"/>
+    <bean id="fileTableServiceBean"
+          class="com.ysrbdlgn.audioconverter.frontend.service.FileTableServiceImpl">
+        <property name="mainSceneController" ref="mainSceneControllerBean"/>
+    </bean>
+
+
 
 </beans>

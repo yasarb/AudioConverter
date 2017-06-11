@@ -1,6 +1,7 @@
 package com.ysrbdlgn.audioconverter.frontend.ui.controller;
 
 import com.ysrbdlgn.audioconverter.frontend.AudioConverterApplication;
+import com.ysrbdlgn.audioconverter.frontend.service.FileTableService;
 import com.ysrbdlgn.audioconverter.frontend.ui.FileTable;
 import com.ysrbdlgn.audioconverter.frontend.ui.model.FileTableEntry;
 import javafx.collections.FXCollections;
@@ -11,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.net.URL;
@@ -28,8 +30,9 @@ public class MainSceneControllerImpl implements MainSceneController {
     @FXML private TableColumn<FileTableEntry, String> colTitle;
     @FXML private TableColumn<FileTableEntry, String> colDuration;
     @FXML private TableColumn<FileTableEntry, String> colState;
+    @FXML private RibbonMenuController ribbonMenuController;
 
-    private AudioConverterApplication application;
+    private FileTableService fileTableService;
     private ObservableList<FileTableEntry> fileTableEntries;
 
     public MainSceneControllerImpl() {}
@@ -43,7 +46,6 @@ public class MainSceneControllerImpl implements MainSceneController {
         colDuration.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("duration"));
         colState.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("state"));
         colState.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("state"));
-
 
         fileTableEntries = FXCollections.observableArrayList(
                 new FileTableEntry(1, "C:", "dosya1", 126513),
@@ -66,6 +68,14 @@ public class MainSceneControllerImpl implements MainSceneController {
             return;
 
         outputPathField.setText(directory.getAbsolutePath());
+    }
+
+    public FileTable getFileTable() {
+        return fileTable;
+    }
+
+    public void setFileTableService(FileTableService fileTableService) {
+        this.fileTableService = fileTableService;
     }
 
 }
