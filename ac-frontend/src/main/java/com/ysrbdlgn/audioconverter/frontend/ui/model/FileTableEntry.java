@@ -22,7 +22,7 @@ public class FileTableEntry {
         this.path = new SimpleStringProperty(path);
         this.title = new SimpleStringProperty(title);
         this.duration = new SimpleStringProperty(DurationFormatUtils.formatDuration(duration, DURATION_FORMAT));
-        this.state = new SimpleStringProperty(EFileState.READY.getValue());
+        this.state = new SimpleStringProperty(EFileState.READY.getText());
     }
 
     public int getId() {

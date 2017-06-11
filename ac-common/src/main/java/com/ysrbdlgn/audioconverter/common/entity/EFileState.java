@@ -10,13 +10,13 @@ public enum EFileState {
     PLAYING("Playing"),
     NULL("");
 
-    private String value;
+    private String text;
 
-    EFileState(String value) {
-        this.value = value;
+    EFileState(String text) {
+        this.text = text;
     }
 
-    public String getValue() {
-        return value;
+    public String getText() {
+        return text;
     }
 }
