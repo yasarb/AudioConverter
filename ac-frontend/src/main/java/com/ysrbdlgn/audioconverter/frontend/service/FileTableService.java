@@ -1,7 +1,6 @@
 package com.ysrbdlgn.audioconverter.frontend.service;
 
-import com.ysrbdlgn.audioconverter.frontend.ui.model.FileTableEntry;
-import javafx.fxml.Initializable;
+import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
 
 import java.io.File;
 

@@ -8,6 +8,7 @@ public enum EFileState {
     READY("Ready"),
     PROCESSING("Processing"),
     PLAYING("Playing"),
+    DONE("Done"),
     NULL("");
 
     private String text;

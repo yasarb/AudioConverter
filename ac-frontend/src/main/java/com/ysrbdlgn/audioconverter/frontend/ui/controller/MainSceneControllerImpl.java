@@ -3,8 +3,7 @@ package com.ysrbdlgn.audioconverter.frontend.ui.controller;
 import com.ysrbdlgn.audioconverter.frontend.AudioConverterApplication;
 import com.ysrbdlgn.audioconverter.frontend.service.FileTableService;
 import com.ysrbdlgn.audioconverter.frontend.ui.FileTable;
-import com.ysrbdlgn.audioconverter.frontend.ui.model.FileTableEntry;
-import javafx.collections.FXCollections;
+import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +11,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.net.URL;
@@ -23,7 +21,7 @@ import java.util.ResourceBundle;
  */
 public class MainSceneControllerImpl implements MainSceneController {
 
-    @FXML private FileTable fileTable;
+    @FXML private FileTable<FileTableEntry> fileTable;
     @FXML private TextField outputPathField;
     @FXML private TableColumn<FileTableEntry, Integer> colID;
     @FXML private TableColumn<FileTableEntry, String> colFileName;
@@ -47,12 +45,12 @@ public class MainSceneControllerImpl implements MainSceneController {
         colState.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("state"));
         colState.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("state"));
 
-        fileTableEntries = FXCollections.observableArrayList(
-                new FileTableEntry(1, "C:", "dosya1", 126513),
-                new FileTableEntry(2, "C:\\Program Files\\", "program files", 8451136)
-        );
+//        fileTableEntries = FXCollections.observableArrayList(
+//                new FileTableEntry(1, "C:", "dosya1", 126513),
+//                new FileTableEntry(2, "C:\\Program Files\\", "program files", 8451136)
+//        );
 
-        fileTable.getItems().setAll(fileTableEntries);
+        //fileTable.getItems().setAll(fileTableEntries);
 
     }
 
@@ -70,7 +68,7 @@ public class MainSceneControllerImpl implements MainSceneController {
         outputPathField.setText(directory.getAbsolutePath());
     }
 
-    public FileTable getFileTable() {
+    public FileTable<FileTableEntry> getFileTable() {
         return fileTable;
     }
 

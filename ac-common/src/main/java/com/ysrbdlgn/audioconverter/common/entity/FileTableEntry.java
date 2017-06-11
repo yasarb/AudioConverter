@@ -1,9 +1,14 @@
-package com.ysrbdlgn.audioconverter.frontend.ui.model;
+package com.ysrbdlgn.audioconverter.common.entity;
 
+import com.ysrbdlgn.audioconverter.common.CryptoUtil;
 import com.ysrbdlgn.audioconverter.common.entity.EFileState;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import org.apache.commons.lang3.time.DurationFormatUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by ysrbdlgn on 10-Jun-17.
@@ -11,18 +16,33 @@ import org.apache.commons.lang3.time.DurationFormatUtils;
 public class FileTableEntry {
 
     private final String DURATION_FORMAT = "HH:mm:ss";
-    private final SimpleIntegerProperty id;
-    private final SimpleStringProperty path;
-    private final SimpleStringProperty title;
-    private final SimpleStringProperty duration;
-    private final SimpleStringProperty state;
+    private SimpleIntegerProperty id;
+    private SimpleStringProperty path;
+    private SimpleStringProperty title;
+    private SimpleStringProperty duration;
+    private SimpleStringProperty state;
+    private String hash;
 
-    public FileTableEntry(int id, String path, String title, long duration) {
+    public FileTableEntry(){
+        this.id = new SimpleIntegerProperty(-1);
+        this.path = new SimpleStringProperty("");
+        this.title = new SimpleStringProperty("");
+        this.duration = new SimpleStringProperty("");
+        this.state = new SimpleStringProperty("");
+        this.hash = "";
+    }
+
+    public FileTableEntry(File file) {
+        // TODO
+    }
+
+    public FileTableEntry(int id, String path, String title, long duration) throws IOException, NoSuchAlgorithmException {
         this.id = new SimpleIntegerProperty(id);
         this.path = new SimpleStringProperty(path);
         this.title = new SimpleStringProperty(title);
         this.duration = new SimpleStringProperty(DurationFormatUtils.formatDuration(duration, DURATION_FORMAT));
         this.state = new SimpleStringProperty(EFileState.READY.getText());
+        this.hash = CryptoUtil.calculateSHA1(new File(path));
     }
 
     public int getId() {
@@ -85,8 +105,8 @@ public class FileTableEntry {
         return state;
     }
 
-    public void setState(String state) {
-        this.state.set(state);
+    public void setState(EFileState state) {
+        this.state.set(state.getText());
     }
 
     @Override
@@ -98,5 +118,13 @@ public class FileTableEntry {
                 ", duration=" + duration +
                 ", state=" + state +
                 '}';
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public String getHash() {
+        return hash;
     }
 }

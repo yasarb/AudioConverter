@@ -23,7 +23,7 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
         FileChooser chooser = new FileChooser();
         /* TODO: Initial directory should be the directory where app started.*/
 
-        chooser.setInitialDirectory(new File("C:\\"));
+        chooser.setInitialDirectory(new File("E:\\test_mp3"));
         addExtensionFilters(chooser);
         File file = chooser.showOpenDialog(AudioConverterApplication.getScene().getWindow());
 
