@@ -8,13 +8,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/8.0.112">
+<VBox xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="com.ysrbdlgn.audioconverter.frontend.ui.controller.RibbonMenuController">
     <Ribbon>
         <tabs>
             <RibbonTab text="Files">
                 <RibbonGroup title="Add">
                     <nodes>
-                        <Button contentDisplay="TOP" text="Add File">
+                        <Button contentDisplay="TOP" text="Add File" onAction="#addFileButtonPressed">
                             <graphic>
                                 <ImageView>
                                     <Image url="@/icon/64x64/001-file.png"/>

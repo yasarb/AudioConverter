@@ -20,7 +20,7 @@
 
     <top>
         <VBox BorderPane.alignment="TOP_LEFT">
-            <fx:include source="ribbon.fxml"/>
+            <fx:include fx:id="ribbonMenu" source="ribbon.fxml"/>
         </VBox>
     </top>
     <center>

@@ -3,9 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="audioConverterAppBean" class="com.ysrbdlgn.audioconverter.frontend.AudioConverterApplication"/>
+    <bean id="audioConverterAppBean" class="com.ysrbdlgn.audioconverter.frontend.AudioConverterApplication" lazy-init="true"/>
 
     <bean id="mainSceneControllerBean"
-          class="com.ysrbdlgn.audioconverter.frontend.ui.controller.MainSceneControllerImpl"/>
+          class="com.ysrbdlgn.audioconverter.frontend.ui.controller.MainSceneControllerImpl">
+        <property name="fileTableService" ref="fileTableServiceBean"/>
+    </bean>
+
+    <bean id="ribbonMenuControllerBean"
+          class="com.ysrbdlgn.audioconverter.frontend.ui.controller.RibbonMenuControllerImpl">
+        <property name="fileTableService" ref="fileTableServiceBean"/>
+    </bean>
 
 </beans>
