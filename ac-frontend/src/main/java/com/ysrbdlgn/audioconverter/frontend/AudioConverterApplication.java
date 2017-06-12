@@ -33,7 +33,7 @@ public class AudioConverterApplication extends Application {
         loader.setControllerFactory(applicationContext::getBean);
         Parent root = loader.load();
 
-        scene = new Scene(root, 800, 600);
+        scene = new Scene(root);
         primaryStage.setTitle("<Title>");
         primaryStage.setScene(scene);
         primaryStage.show();

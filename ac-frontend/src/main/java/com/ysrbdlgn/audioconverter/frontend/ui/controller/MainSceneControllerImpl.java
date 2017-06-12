@@ -45,13 +45,6 @@ public class MainSceneControllerImpl implements MainSceneController {
         colState.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("state"));
         colState.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("state"));
 
-//        fileTableEntries = FXCollections.observableArrayList(
-//                new FileTableEntry(1, "C:", "dosya1", 126513),
-//                new FileTableEntry(2, "C:\\Program Files\\", "program files", 8451136)
-//        );
-
-        //fileTable.getItems().setAll(fileTableEntries);
-
     }
 
     @FXML
