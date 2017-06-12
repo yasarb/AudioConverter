@@ -90,7 +90,7 @@ public class FileTableEntry {
     }
 
     public void setDuration(long duration) {
-        this.duration.set(DurationFormatUtils.formatDurationHMS(duration));
+        this.duration.set(DurationFormatUtils.formatDuration(duration, DURATION_FORMAT));
     }
 
     public void setDuration(String duration) {

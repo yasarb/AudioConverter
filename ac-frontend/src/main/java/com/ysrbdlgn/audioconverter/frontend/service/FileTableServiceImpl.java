@@ -2,13 +2,12 @@ package com.ysrbdlgn.audioconverter.frontend.service;
 
 import com.ysrbdlgn.audioconverter.common.CryptoUtil;
 import com.ysrbdlgn.audioconverter.common.FileInfoUtil;
+import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
 import com.ysrbdlgn.audioconverter.common.validation.FileTypeValidator;
 import com.ysrbdlgn.audioconverter.frontend.ui.FileTable;
 import com.ysrbdlgn.audioconverter.frontend.ui.GenericDialog;
 import com.ysrbdlgn.audioconverter.frontend.ui.controller.MainSceneControllerImpl;
-import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
 
-import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.File;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;

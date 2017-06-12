@@ -2,6 +2,7 @@ package com.ysrbdlgn.audioconverter.common;
 
 import com.ysrbdlgn.audioconverter.common.entity.EFileState;
 import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
+import com.ysrbdlgn.audioconverter.common.mediainfo.MediaInfoUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,9 +19,11 @@ public class FileInfoUtil {
         String hash = CryptoUtil.calculateSHA1(file);
 
         /* TODO: extract audio info */
+        long duration = Long.parseLong(MediaInfoUtil.getAudioDuration(file));
+
         entry.setPath(file.getAbsolutePath());
         entry.setTitle("");
-        entry.setDuration(0);
+        entry.setDuration(duration);
         entry.setState(EFileState.READY);
         entry.setHash(hash);
 
