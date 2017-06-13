@@ -21,6 +21,7 @@ public class FileTableEntry {
     private SimpleStringProperty title;
     private SimpleStringProperty duration;
     private SimpleStringProperty state;
+    private AudioTrack track;
     private String hash;
 
     public FileTableEntry(){
@@ -126,5 +127,13 @@ public class FileTableEntry {
 
     public String getHash() {
         return hash;
+    }
+
+    public AudioTrack getTrack() {
+        return track;
+    }
+
+    public void setTrack(AudioTrack track) {
+        this.track = track;
     }
 }
