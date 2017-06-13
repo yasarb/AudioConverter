@@ -7,4 +7,5 @@ import javafx.event.ActionEvent;
  */
 public interface RibbonMenuController {
     void addFileButtonPressed(ActionEvent actionEvent);
+    void removeFileButtonPressed(ActionEvent actionEvent);
 }

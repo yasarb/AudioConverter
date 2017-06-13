@@ -4,6 +4,7 @@ import com.ysrbdlgn.audioconverter.common.entity.EFileType;
 import com.ysrbdlgn.audioconverter.frontend.AudioConverterApplication;
 import com.ysrbdlgn.audioconverter.frontend.service.FileTableService;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -31,6 +32,15 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
             return;
 
         fileTableService.addFile(file);
+
+    }
+
+    @Override
+    public void removeFileButtonPressed(ActionEvent actionEvent) {
+
+        Button sourceButton = (Button) actionEvent.getSource();
+
+        System.out.println(sourceButton.getId());
 
     }
 

@@ -9,28 +9,50 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="com.ysrbdlgn.audioconverter.frontend.ui.controller.RibbonMenuController">
+      fx:controller="com.ysrbdlgn.audioconverter.frontend.ui.controller.RibbonMenuController">
     <Ribbon>
         <tabs>
             <RibbonTab text="Files">
-                <RibbonGroup title="Add">
-                    <nodes>
-                        <Button contentDisplay="TOP" text="Add File" onAction="#addFileButtonPressed">
-                            <graphic>
-                                <ImageView>
-                                    <Image url="@/icon/64x64/001-file.png"/>
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" text="Add Folder">
-                            <graphic>
-                                <ImageView>
-                                    <Image url="@/icon/64x64/002-folder.png"/>
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                    </nodes>
-                </RibbonGroup>
+                <ribbonGroups>
+                    <RibbonGroup title="Add">
+                        <nodes>
+                            <Button contentDisplay="TOP" text="Add File" onAction="#addFileButtonPressed">
+                                <graphic>
+                                    <ImageView>
+                                        <Image url="@/icon/64x64/001-file.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Button contentDisplay="TOP" text="Add Folder">
+                                <graphic>
+                                    <ImageView>
+                                        <Image url="@/icon/64x64/002-folder.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </nodes>
+                    </RibbonGroup>
+                    <RibbonGroup title="">
+                        <nodes>
+                            <Button contentDisplay="TOP" text="Remove File" id="removeFileButton"
+                                    onAction="#removeFileButtonPressed">
+                                <graphic>
+                                    <ImageView>
+                                        <Image url="@/icon/64x64/011-delete.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Button contentDisplay="TOP" text="Remove All" id="removeAllButton"
+                                    onAction="#removeFileButtonPressed">
+                                <graphic>
+                                    <ImageView>
+                                        <Image url="@/icon/64x64/011-delete.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </nodes>
+                    </RibbonGroup>
+                </ribbonGroups>
             </RibbonTab>
             <RibbonTab text="Formats">
                 <ribbonGroups>
@@ -39,49 +61,49 @@
                             <Button contentDisplay="TOP" text="MP3">
                                 <graphic>
                                     <ImageView>
-                                        <Image url="@/icon/64x64/006-mp3.png" />
+                                        <Image url="@/icon/64x64/006-mp3.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>
                             <Button contentDisplay="TOP" text="WMA">
                                 <graphic>
                                     <ImageView>
-                                        <Image url="@/icon/64x64/008-wma.png" />
+                                        <Image url="@/icon/64x64/008-wma.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>
                             <Button contentDisplay="TOP" text="WAV">
                                 <graphic>
                                     <ImageView>
-                                        <Image url="@/icon/64x64/005-wav.png" />
+                                        <Image url="@/icon/64x64/005-wav.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>
                             <Button contentDisplay="TOP" text="AAC">
                                 <graphic>
                                     <ImageView>
-                                        <Image url="@/icon/64x64/007-aac.png" />
+                                        <Image url="@/icon/64x64/007-aac.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>
                             <Button contentDisplay="TOP" text="M4A">
                                 <graphic>
                                     <ImageView>
-                                        <Image url="@/icon/64x64/003-m4a.png" />
+                                        <Image url="@/icon/64x64/003-m4a.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>
                             <Button contentDisplay="TOP" text="AMR">
                                 <graphic>
                                     <ImageView>
-                                        <Image url="@/icon/64x64/004-amr.png" />
+                                        <Image url="@/icon/64x64/004-amr.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>
                             <Button contentDisplay="TOP" text="OGG">
                                 <graphic>
                                     <ImageView>
-                                        <Image url="@/icon/64x64/009-ogg.png" />
+                                        <Image url="@/icon/64x64/009-ogg.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>
@@ -92,7 +114,7 @@
                             <Button contentDisplay="TOP" text="Convert">
                                 <graphic>
                                     <ImageView>
-                                        <Image url="@/icon/64x64/010-convert.png" />
+                                        <Image url="@/icon/64x64/010-convert.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>
