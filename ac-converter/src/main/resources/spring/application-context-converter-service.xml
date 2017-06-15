@@ -4,7 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="converterServiceBean" class="com.ysrbdlgn.audioconverter.converter.service.ConverterServiceImpl"
-          init-method="initialize">
+        init-method="initialize">
+        <property name="converter" ref="converterBean"/>
         <property name="converterProgressListener" ref="converterProgressListener"/>
     </bean>
 

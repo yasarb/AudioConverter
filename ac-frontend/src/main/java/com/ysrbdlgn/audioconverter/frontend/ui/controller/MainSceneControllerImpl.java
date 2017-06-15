@@ -32,7 +32,6 @@ public class MainSceneControllerImpl implements MainSceneController {
     @FXML private RibbonMenuController ribbonMenuController;
     @FXML private ProgressBar convertFileProgressBar;
 
-    private ConverterService converterService;
     private ConverterProgressListener converterProgressListener;
 
     public MainSceneControllerImpl() {}
@@ -66,7 +65,6 @@ public class MainSceneControllerImpl implements MainSceneController {
     public FileTable<FileTableEntry> getFileTable() { return fileTable; }
 
     public void setConverterService(ConverterService service) {
-        this.converterService = service;
     }
 
     public void setConverterProgressListener(ConverterProgressListener converterProgressListener) {

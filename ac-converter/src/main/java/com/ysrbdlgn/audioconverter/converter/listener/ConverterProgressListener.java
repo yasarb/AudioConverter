@@ -25,14 +25,10 @@ public class ConverterProgressListener implements Converter.ProgressListener {
     public void converterUpdate(int i, int i1, int i2) {}
 
     @Override
-    public void parsedFrame(int i, Header header) {
-        System.out.println("Parse Frame: " + i);
-    }
+    public void parsedFrame(int i, Header header) {}
 
     @Override
-    public void readFrame(int i, Header header) {
-        System.out.println("Read Frame: " + i);
-    }
+    public void readFrame(int i, Header header) {}
 
     @Override
     public void decodedFrame(int i, Header header, Obuffer obuffer) {

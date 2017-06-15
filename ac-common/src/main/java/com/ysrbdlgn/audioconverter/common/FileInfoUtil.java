@@ -1,7 +1,7 @@
 package com.ysrbdlgn.audioconverter.common;
 
 import com.ysrbdlgn.audioconverter.common.entity.AudioTrack;
-import com.ysrbdlgn.audioconverter.common.entity.EFileState;
+import com.ysrbdlgn.audioconverter.common.entity.EFileConversionState;
 import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
 import com.ysrbdlgn.audioconverter.common.mediainfo.MediaInfoUtil;
 
@@ -24,7 +24,7 @@ public class FileInfoUtil {
         entry.setPath(file.getAbsolutePath());
         entry.setTitle(track.getTitle());
         entry.setDuration(track.getDuration());
-        entry.setState(EFileState.READY);
+        entry.setState(EFileConversionState.READY);
         entry.setHash(hash);
         entry.setTrack(track);
 

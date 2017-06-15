@@ -3,17 +3,17 @@ package com.ysrbdlgn.audioconverter.common.entity;
 /**
  * Created by ysrbdlgn on 10-Jun-17.
  */
-public enum EFileState {
+public enum EFileConversionState {
 
     READY("Ready"),
-    PROCESSING("Processing"),
+    CONVERTING("Converting"),
     PLAYING("Playing"),
     DONE("Done"),
     NULL("");
 
     private String text;
 
-    EFileState(String text) {
+    EFileConversionState(String text) {
         this.text = text;
     }
 

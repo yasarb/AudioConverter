@@ -56,10 +56,12 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
 
         String outputFolder = "E:\\converted\\";
         String fileName;
+
         for(FileTableEntry entry : entryList) {
+
             fileName = entry.getPath().substring(entry.getPath().lastIndexOf(File.separator), entry.getPath().lastIndexOf("."));
-            converterService.convert(entry.getTrack(), outputFolder + fileName + ".wav");
-            System.out.println("Converted: " + entry.getPath());
+            converterService.convert(entry, outputFolder + fileName + ".wav");
+
         }
     }
 
@@ -92,4 +94,5 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
     public void setConverterService(ConverterService converterService) {
         this.converterService = converterService;
     }
+
 }

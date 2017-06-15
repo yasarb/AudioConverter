@@ -1,7 +1,6 @@
 package com.ysrbdlgn.audioconverter.common.entity;
 
 import com.ysrbdlgn.audioconverter.common.CryptoUtil;
-import com.ysrbdlgn.audioconverter.common.entity.EFileState;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import org.apache.commons.lang3.time.DurationFormatUtils;
@@ -33,16 +32,12 @@ public class FileTableEntry {
         this.hash = "";
     }
 
-    public FileTableEntry(File file) {
-        // TODO
-    }
-
     public FileTableEntry(int id, String path, String title, long duration) throws IOException, NoSuchAlgorithmException {
         this.id = new SimpleIntegerProperty(id);
         this.path = new SimpleStringProperty(path);
         this.title = new SimpleStringProperty(title);
         this.duration = new SimpleStringProperty(DurationFormatUtils.formatDuration(duration, DURATION_FORMAT));
-        this.state = new SimpleStringProperty(EFileState.READY.getText());
+        this.state = new SimpleStringProperty(EFileConversionState.READY.getText());
         this.hash = CryptoUtil.calculateSHA1(new File(path));
     }
 
@@ -106,7 +101,7 @@ public class FileTableEntry {
         return state;
     }
 
-    public void setState(EFileState state) {
+    public void setState(EFileConversionState state) {
         this.state.set(state.getText());
     }
 

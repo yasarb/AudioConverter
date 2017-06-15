@@ -5,6 +5,8 @@
 
     <import resource="classpath*:/spring/application-context-converter-service.xml"/>
 
+    <bean id="converterBean" class="javazoom.jl.converter.Converter"/>
+
     <bean id="converterProgressListener" class="com.ysrbdlgn.audioconverter.converter.listener.ConverterProgressListener"
         init-method="initialize"/>
 
