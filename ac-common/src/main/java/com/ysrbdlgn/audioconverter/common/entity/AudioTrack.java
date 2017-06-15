@@ -18,6 +18,7 @@ public class AudioTrack {
     private String album;
     private String performer;
     private String encodedLibrary;
+    private String path;
 
     public AudioTrack() {
     }
@@ -124,5 +125,13 @@ public class AudioTrack {
 
     public void setEncodedLibrary(String encodedLibrary) {
         this.encodedLibrary = encodedLibrary;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

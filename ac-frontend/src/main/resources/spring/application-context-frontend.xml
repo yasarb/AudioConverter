@@ -6,4 +6,7 @@
     <import resource="classpath*:/spring/application-context-frontend-ui.xml"/>
     <import resource="classpath*:/spring/application-context-frontend-service.xml"/>
 
+    <import resource="classpath*:/spring/application-context-converter.xml"/>
+    <import resource="classpath*:/spring/application-context-common.xml"/>
+
 </beans>

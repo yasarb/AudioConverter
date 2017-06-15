@@ -111,7 +111,7 @@
                     </RibbonGroup>
                     <RibbonGroup seperator="false">
                         <nodes>
-                            <Button contentDisplay="TOP" text="Convert">
+                            <Button contentDisplay="TOP" text="Convert" onAction="#convertButtonPressed">
                                 <graphic>
                                     <ImageView>
                                         <Image url="@/icon/64x64/010-convert.png"/>

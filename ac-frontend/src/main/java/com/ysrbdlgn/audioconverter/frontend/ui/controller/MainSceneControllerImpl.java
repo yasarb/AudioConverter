@@ -1,12 +1,13 @@
 package com.ysrbdlgn.audioconverter.frontend.ui.controller;
 
+import com.ysrbdlgn.audioconverter.converter.listener.ConverterProgressListener;
+import com.ysrbdlgn.audioconverter.converter.service.ConverterService;
 import com.ysrbdlgn.audioconverter.frontend.AudioConverterApplication;
-import com.ysrbdlgn.audioconverter.frontend.service.FileTableService;
 import com.ysrbdlgn.audioconverter.frontend.ui.FileTable;
 import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -29,9 +30,10 @@ public class MainSceneControllerImpl implements MainSceneController {
     @FXML private TableColumn<FileTableEntry, String> colDuration;
     @FXML private TableColumn<FileTableEntry, String> colState;
     @FXML private RibbonMenuController ribbonMenuController;
+    @FXML private ProgressBar convertFileProgressBar;
 
-    private FileTableService fileTableService;
-    private ObservableList<FileTableEntry> fileTableEntries;
+    private ConverterService converterService;
+    private ConverterProgressListener converterProgressListener;
 
     public MainSceneControllerImpl() {}
 
@@ -43,8 +45,8 @@ public class MainSceneControllerImpl implements MainSceneController {
         colTitle.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("title"));
         colDuration.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("duration"));
         colState.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("state"));
-        colState.setCellValueFactory(new PropertyValueFactory<FileTableEntry, String>("state"));
 
+        convertFileProgressBar.progressProperty().bind(converterProgressListener.progressProperty());
     }
 
     @FXML
@@ -61,12 +63,13 @@ public class MainSceneControllerImpl implements MainSceneController {
         outputPathField.setText(directory.getAbsolutePath());
     }
 
-    public FileTable<FileTableEntry> getFileTable() {
-        return fileTable;
+    public FileTable<FileTableEntry> getFileTable() { return fileTable; }
+
+    public void setConverterService(ConverterService service) {
+        this.converterService = service;
     }
 
-    public void setFileTableService(FileTableService fileTableService) {
-        this.fileTableService = fileTableService;
+    public void setConverterProgressListener(ConverterProgressListener converterProgressListener) {
+        this.converterProgressListener = converterProgressListener;
     }
-
 }

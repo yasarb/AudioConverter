@@ -28,7 +28,6 @@ public class MediaInfoUtil {
 
         INSTANCE.open(file);
         AudioTrack track = new AudioTrack();
-
         track.setBitRate(INSTANCE.get(MediaInfo.StreamKind.Audio, 0, "BitRate"));
         track.setCodec(INSTANCE.get(MediaInfo.StreamKind.Audio, 0, "Codec/String"));
         track.setChannels(Integer.parseInt(
@@ -46,7 +45,7 @@ public class MediaInfoUtil {
         track.setAlbum(INSTANCE.get(MediaInfo.StreamKind.General, 0, "Album"));
         track.setPerformer(INSTANCE.get(MediaInfo.StreamKind.General, 0, "Performer"));
         track.setEncodedLibrary(INSTANCE.get(MediaInfo.StreamKind.General, 0, "Encoded_Library"));
-
+        track.setPath(file.getAbsolutePath());
         INSTANCE.close();
 
         return track;

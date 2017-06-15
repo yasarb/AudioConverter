@@ -11,6 +11,7 @@ import com.ysrbdlgn.audioconverter.frontend.ui.controller.MainSceneControllerImp
 import java.io.File;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 /**
  * Created by ysrbdlgn on 11-Jun-17.
@@ -79,6 +80,11 @@ public class FileTableServiceImpl implements FileTableService {
         entry.setId(fileTable.getItems().size() + 1);
         fileTable.getItems().add(entry);
 
+    }
+
+    @Override
+    public List<FileTableEntry> getEntries() {
+        return mainSceneController.getFileTable().getItems();
     }
 
     public void setMainSceneController(MainSceneControllerImpl mainSceneController) {

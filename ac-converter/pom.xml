@@ -16,4 +16,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>javazoom</groupId>
+            <artifactId>jlayer</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ysrbdlgn.audioconverter</groupId>
+            <artifactId>ac-common</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
 </project>

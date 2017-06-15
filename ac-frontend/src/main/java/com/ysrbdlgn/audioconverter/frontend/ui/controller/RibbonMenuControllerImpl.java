@@ -1,11 +1,15 @@
 package com.ysrbdlgn.audioconverter.frontend.ui.controller;
 
 import com.ysrbdlgn.audioconverter.common.entity.EFileType;
+import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
+import com.ysrbdlgn.audioconverter.converter.service.ConverterService;
 import com.ysrbdlgn.audioconverter.frontend.AudioConverterApplication;
 import com.ysrbdlgn.audioconverter.frontend.service.FileTableService;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.stage.FileChooser;
+import javazoom.jl.decoder.JavaLayerException;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -17,6 +21,7 @@ import java.util.List;
 public class RibbonMenuControllerImpl implements RibbonMenuController {
 
     private FileTableService fileTableService;
+    private ConverterService converterService;
 
     @Override
     public void addFileButtonPressed(ActionEvent actionEvent) {
@@ -44,6 +49,20 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
 
     }
 
+    @Override
+    public void convertButtonPressed(ActionEvent actionEvent) throws JavaLayerException {
+
+        ObservableList<FileTableEntry> entryList = (ObservableList<FileTableEntry>) fileTableService.getEntries();
+
+        String outputFolder = "E:\\converted\\";
+        String fileName;
+        for(FileTableEntry entry : entryList) {
+            fileName = entry.getPath().substring(entry.getPath().lastIndexOf(File.separator), entry.getPath().lastIndexOf("."));
+            converterService.convert(entry.getTrack(), outputFolder + fileName + ".wav");
+            System.out.println("Converted: " + entry.getPath());
+        }
+    }
+
     private void addExtensionFilters(FileChooser chooser){
 
         String extensionTemplate = "*.%s";
@@ -68,5 +87,9 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
 
     public void setFileTableService(FileTableService fileTableService) {
         this.fileTableService = fileTableService;
+    }
+
+    public void setConverterService(ConverterService converterService) {
+        this.converterService = converterService;
     }
 }

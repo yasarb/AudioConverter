@@ -7,12 +7,14 @@
 
     <bean id="mainSceneControllerBean"
           class="com.ysrbdlgn.audioconverter.frontend.ui.controller.MainSceneControllerImpl">
-        <property name="fileTableService" ref="fileTableServiceBean"/>
+        <property name="converterService" ref="converterServiceBean"/>
+        <property name="converterProgressListener" ref="converterProgressListener"/>
     </bean>
 
     <bean id="ribbonMenuControllerBean"
           class="com.ysrbdlgn.audioconverter.frontend.ui.controller.RibbonMenuControllerImpl">
         <property name="fileTableService" ref="fileTableServiceBean"/>
+        <property name="converterService" ref="converterServiceBean"/>
     </bean>
 
 </beans>

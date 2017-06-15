@@ -3,9 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="classpath*:/spring/application-context-converter-service.xml"/>
-
-    <bean id="converterProgressListener" class="com.ysrbdlgn.audioconverter.converter.listener.ConverterProgressListener"
-        init-method="initialize"/>
+    <bean id="converterServiceBean" class="com.ysrbdlgn.audioconverter.converter.service.ConverterServiceImpl"
+          init-method="initialize">
+        <property name="converterProgressListener" ref="converterProgressListener"/>
+    </bean>
 
 </beans>
