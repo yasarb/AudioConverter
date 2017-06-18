@@ -1,5 +1,6 @@
 package com.ysrbdlgn.audioconverter.common.event;
 
+import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
 import javafx.event.Event;
 import javafx.event.EventType;
 
@@ -8,7 +9,7 @@ import javafx.event.EventType;
  */
 public class ConversionEvent extends Event {
 
-    private int fileID;
+    private FileTableEntry fileTableEntry;
 
     public static final EventType<ConversionEvent> ANY
             = new EventType<>(Event.ANY, "CONVERSION_EVENT");
@@ -23,17 +24,17 @@ public class ConversionEvent extends Event {
         super(eventType);
     }
 
-    public ConversionEvent(EventType<ConversionEvent> eventType, int fileID) {
+    public ConversionEvent(EventType<ConversionEvent> eventType, FileTableEntry entry) {
         super(eventType);
-        this.fileID = fileID;
+        this.fileTableEntry = entry;
     }
 
-    public int getFileID() {
-        return fileID;
+    public FileTableEntry getFileEntry() {
+        return fileTableEntry;
     }
 
     @Override
     public String toString() {
-        return "ConversionEvent[" + getEventType() + ", fileID=" + getFileID() + "]";
+        return "ConversionEvent[" + getEventType() + ", FileTableEntry=" + getFileEntry() + "]";
     }
 }
