@@ -7,7 +7,7 @@
 
     <bean id="converterBean" class="javazoom.jl.converter.Converter"/>
 
-    <bean id="converterProgressListener" class="com.ysrbdlgn.audioconverter.converter.listener.ConverterProgressListener"
+    <bean id="convertFileProgressListener" class="com.ysrbdlgn.audioconverter.converter.listener.ConvertFileProgressListener"
         init-method="initialize"/>
 
 </beans>

@@ -1,6 +1,7 @@
 package com.ysrbdlgn.audioconverter.converter.listener;
 
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javazoom.jl.converter.Converter;
 import javazoom.jl.decoder.Header;
 import javazoom.jl.decoder.Obuffer;
@@ -8,11 +9,12 @@ import javazoom.jl.decoder.Obuffer;
 /**
  * Created by ysrbdlgn on 15-Jun-17.
  */
-public class ConverterProgressListener implements Converter.ProgressListener {
+public class ConvertFileProgressListener implements Converter.ProgressListener {
 
     private SimpleDoubleProperty progress;
+    private SimpleStringProperty filePathProperty;
 
-    public ConverterProgressListener() {
+    public ConvertFileProgressListener() {
     }
 
     private void initialize() {
