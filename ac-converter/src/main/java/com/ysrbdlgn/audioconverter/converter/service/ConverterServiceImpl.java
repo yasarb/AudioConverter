@@ -2,7 +2,7 @@ package com.ysrbdlgn.audioconverter.converter.service;
 
 import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
 import com.ysrbdlgn.audioconverter.common.concurrent.ACThreadFactory;
-import com.ysrbdlgn.audioconverter.converter.listener.ConverterProgressListener;
+import com.ysrbdlgn.audioconverter.converter.listener.ConvertFileProgressListener;
 import javazoom.jl.converter.Converter;
 import javazoom.jl.decoder.JavaLayerException;
 
@@ -16,7 +16,7 @@ public class ConverterServiceImpl implements ConverterService {
 
     private Converter converter;
     private ExecutorService executorService;
-    private ConverterProgressListener converterProgressListener;
+    private ConvertFileProgressListener convertFileProgressListener;
 
     public ConverterServiceImpl() {}
 
@@ -36,7 +36,7 @@ public class ConverterServiceImpl implements ConverterService {
         converterExecService.setEntry(entry);
         converterExecService.setDestination(destination);
         converterExecService.setConverter(converter);
-        converterExecService.setConverterProgressListener(converterProgressListener);
+        converterExecService.setConvertFileProgressListener(convertFileProgressListener);
         converterExecService.start();
 
     }
@@ -45,8 +45,8 @@ public class ConverterServiceImpl implements ConverterService {
         this.converter = converter;
     }
 
-    public void setConverterProgressListener(ConverterProgressListener converterProgressListener) {
-        this.converterProgressListener = converterProgressListener;
+    public void setConvertFileProgressListener(ConvertFileProgressListener convertFileProgressListener) {
+        this.convertFileProgressListener = convertFileProgressListener;
     }
 
 }

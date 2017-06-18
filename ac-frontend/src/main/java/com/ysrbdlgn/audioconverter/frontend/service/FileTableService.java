@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface FileTableService {
 
-    public void addFile(File file);
+    void addFile(File file);
 
     List<FileTableEntry> getEntries();
 }

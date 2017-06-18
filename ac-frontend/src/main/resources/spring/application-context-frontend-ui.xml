@@ -8,7 +8,7 @@
     <bean id="mainSceneControllerBean"
           class="com.ysrbdlgn.audioconverter.frontend.ui.controller.MainSceneControllerImpl">
         <property name="converterService" ref="converterServiceBean"/>
-        <property name="converterProgressListener" ref="converterProgressListener"/>
+        <property name="convertFileProgressListener" ref="convertFileProgressListener"/>
     </bean>
 
     <bean id="ribbonMenuControllerBean"

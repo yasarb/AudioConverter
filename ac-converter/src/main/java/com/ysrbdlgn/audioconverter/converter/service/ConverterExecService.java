@@ -1,8 +1,10 @@
 package com.ysrbdlgn.audioconverter.converter.service;
 
-import com.ysrbdlgn.audioconverter.common.entity.EFileConversionState;
+import com.ysrbdlgn.audioconverter.common.EServiceLocator;
 import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
-import com.ysrbdlgn.audioconverter.converter.listener.ConverterProgressListener;
+import com.ysrbdlgn.audioconverter.common.event.ConversionEvent;
+import com.ysrbdlgn.audioconverter.common.event.EventBus;
+import com.ysrbdlgn.audioconverter.converter.listener.ConvertFileProgressListener;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javazoom.jl.converter.Converter;
@@ -16,17 +18,18 @@ public class ConverterExecService<T> extends Service<T> {
     private FileTableEntry entry;
     private Converter converter;
     private String destination;
-    private ConverterProgressListener converterProgressListener;
+    private ConvertFileProgressListener convertFileProgressListener;
 
     protected Task<T> createTask() {
 
         return new Task<T>() {
 
             protected T call() throws Exception {
+                EventBus eventBus = EServiceLocator.INSTANCE.getService(EventBus.class);
 
-                entry.setState(EFileConversionState.CONVERTING);
-                converter.convert(entry.getPath(), destination, converterProgressListener);
-                entry.setState(EFileConversionState.DONE);
+                eventBus.fireEvent(new ConversionEvent(ConversionEvent.STARTED, entry));
+                converter.convert(entry.getPath(), destination, convertFileProgressListener);
+                eventBus.fireEvent(new ConversionEvent(ConversionEvent.DONE, entry));
 
                 return null;
             }
@@ -45,7 +48,7 @@ public class ConverterExecService<T> extends Service<T> {
         this.destination = destination;
     }
 
-    public void setConverterProgressListener(ConverterProgressListener converterProgressListener) {
-        this.converterProgressListener = converterProgressListener;
+    public void setConvertFileProgressListener(ConvertFileProgressListener convertFileProgressListener) {
+        this.convertFileProgressListener = convertFileProgressListener;
     }
 }

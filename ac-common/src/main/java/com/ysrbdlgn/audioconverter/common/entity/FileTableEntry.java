@@ -1,6 +1,9 @@
 package com.ysrbdlgn.audioconverter.common.entity;
 
 import com.ysrbdlgn.audioconverter.common.CryptoUtil;
+import com.ysrbdlgn.audioconverter.common.EServiceLocator;
+import com.ysrbdlgn.audioconverter.common.event.ConversionEvent;
+import com.ysrbdlgn.audioconverter.common.event.EventBus;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import org.apache.commons.lang3.time.DurationFormatUtils;
@@ -30,6 +33,23 @@ public class FileTableEntry {
         this.duration = new SimpleStringProperty("");
         this.state = new SimpleStringProperty("");
         this.hash = "";
+
+        initEvents();
+    }
+
+    private void initEvents() {
+        EventBus eventBus = EServiceLocator.INSTANCE.getService(EventBus.class);
+        eventBus.addEventHandler(ConversionEvent.STARTED, event -> {
+            if(event.getFileEntry().getId() == getId()) {
+                stateProperty().set(EFileConversionState.CONVERTING.getText());
+            }
+        });
+
+        eventBus.addEventHandler(ConversionEvent.DONE, event -> {
+            if(event.getFileEntry().getId() == getId()) {
+                stateProperty().set(EFileConversionState.DONE.getText());
+            }
+        });
     }
 
     public FileTableEntry(int id, String path, String title, long duration) throws IOException, NoSuchAlgorithmException {
