@@ -32,7 +32,7 @@
                             </Button>
                         </nodes>
                     </RibbonGroup>
-                    <RibbonGroup title="">
+                    <RibbonGroup title="Remove">
                         <nodes>
                             <Button contentDisplay="TOP" text="Remove File" id="removeFileButton"
                                     onAction="#removeFileButtonPressed">
@@ -47,6 +47,18 @@
                                 <graphic>
                                     <ImageView>
                                         <Image url="@/icon/64x64/011-delete.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </nodes>
+                    </RibbonGroup>
+                    <RibbonGroup title="" seperator="false">
+                        <nodes>
+                            <Button contentDisplay="TOP" text="Settings" id="settingsButton"
+                                    onAction="#settingsButtonPressed">
+                                <graphic>
+                                    <ImageView>
+                                        <Image url="@/icon/64x64/012-settings.png"/>
                                     </ImageView>
                                 </graphic>
                             </Button>

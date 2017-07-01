@@ -11,5 +11,7 @@ public interface RibbonMenuController {
     void addFileButtonPressed(ActionEvent actionEvent);
     void removeFileButtonPressed(ActionEvent actionEvent);
 
-    void convertButtonPressed(ActionEvent actionEvent) throws JavaLayerException;
+    void convertButtonPressed(ActionEvent actionEvent);
+
+    void settingsButtonPressed(ActionEvent actionEvent);
 }
