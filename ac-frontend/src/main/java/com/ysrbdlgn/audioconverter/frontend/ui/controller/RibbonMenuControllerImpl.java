@@ -5,6 +5,7 @@ import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
 import com.ysrbdlgn.audioconverter.converter.service.ConverterService;
 import com.ysrbdlgn.audioconverter.frontend.AudioConverterApplication;
 import com.ysrbdlgn.audioconverter.frontend.service.FileTableService;
+import com.ysrbdlgn.audioconverter.settings.command.OpenSettingsDialogCommandImpl;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -22,6 +23,7 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
 
     private FileTableService fileTableService;
     private ConverterService converterService;
+    private OpenSettingsDialogCommandImpl openSettingsDialogCommand;
 
     @Override
     public void addFileButtonPressed(ActionEvent actionEvent) {
@@ -50,7 +52,7 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
     }
 
     @Override
-    public void convertButtonPressed(ActionEvent actionEvent) throws JavaLayerException {
+    public void convertButtonPressed(ActionEvent actionEvent) {
 
         ObservableList<FileTableEntry> entryList = (ObservableList<FileTableEntry>) fileTableService.getEntries();
 
@@ -63,6 +65,11 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
             converterService.convert(entry, outputFolder + fileName + ".wav");
 
         }
+    }
+
+    @Override
+    public void settingsButtonPressed(ActionEvent actionEvent) {
+        openSettingsDialogCommand.execute();
     }
 
     private void addExtensionFilters(FileChooser chooser){
@@ -95,4 +102,11 @@ public class RibbonMenuControllerImpl implements RibbonMenuController {
         this.converterService = converterService;
     }
 
+    public void setOpenSettingsDialogCommand(OpenSettingsDialogCommandImpl openSettingsDialogCommand) {
+        this.openSettingsDialogCommand = openSettingsDialogCommand;
+    }
+
+    public OpenSettingsDialogCommandImpl getOpenSettingsDialogCommand() {
+        return openSettingsDialogCommand;
+    }
 }

@@ -39,7 +39,7 @@ public class AudioConverterApplication extends Application {
         Parent root = loader.load();
 
         scene = new Scene(root);
-        primaryStage.setTitle("<Title>");
+        primaryStage.setTitle("Audio Converter");
         primaryStage.setScene(scene);
         primaryStage.show();
 

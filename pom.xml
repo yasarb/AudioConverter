@@ -22,6 +22,7 @@
         <module>ac-frontend</module>
         <module>ac-converter</module>
         <module>ac-common</module>
+        <module>ac-settings</module>
     </modules>
 
     <build>
@@ -91,7 +92,7 @@
 
     <developers>
         <developer>
-            <id>yasar.budulgagn</id>
+            <id>yasar.budulgan</id>
             <name>Yasar Budulgan</name>
             <email>yb.budulgan(at)gmail(dot)com</email>
             <url>http://www.linkedin.com/in/ysrbdlgn</url>

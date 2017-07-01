@@ -8,5 +8,6 @@
 
     <import resource="classpath*:/spring/application-context-converter.xml"/>
     <import resource="classpath*:/spring/application-context-common.xml"/>
+    <import resource="classpath*:/spring/application-context-settings.xml"/>
 
 </beans>

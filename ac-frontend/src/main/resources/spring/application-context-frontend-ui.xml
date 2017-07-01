@@ -15,6 +15,7 @@
           class="com.ysrbdlgn.audioconverter.frontend.ui.controller.RibbonMenuControllerImpl">
         <property name="fileTableService" ref="fileTableServiceBean"/>
         <property name="converterService" ref="converterServiceBean"/>
+        <property name="openSettingsDialogCommand" ref="openSettingsDialogCommandBean"/>
     </bean>
 
 </beans>
