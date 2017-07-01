@@ -3,3 +3,6 @@
 JavaFX application to convert audio files
 
 [Board on Trello](https://trello.com/b/twPxxx59)
+
+## Screenshot
+<img src="img/screenshot_v1_01" align="center" alt="Screenshot_v1_01"/>
