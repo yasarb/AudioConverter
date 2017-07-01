@@ -8,6 +8,6 @@ import javazoom.jl.decoder.JavaLayerException;
  */
 public interface ConverterService {
 
-    public void convert(FileTableEntry source, String destination) throws JavaLayerException;
+    public void convert(FileTableEntry source, String destination);
 
 }

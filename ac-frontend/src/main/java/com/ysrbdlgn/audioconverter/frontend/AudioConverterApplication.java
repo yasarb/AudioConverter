@@ -20,7 +20,6 @@ public class AudioConverterApplication extends Application {
 
     private static ApplicationContext applicationContext;
     private static Scene scene;
-    private EventBus eventBus;
 
     public AudioConverterApplication() {}
 

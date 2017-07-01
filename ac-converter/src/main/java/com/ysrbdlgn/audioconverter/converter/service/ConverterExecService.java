@@ -1,9 +1,8 @@
 package com.ysrbdlgn.audioconverter.converter.service;
 
-import com.ysrbdlgn.audioconverter.common.EServiceLocator;
+import com.ysrbdlgn.audioconverter.common.entity.EFileType;
 import com.ysrbdlgn.audioconverter.common.entity.FileTableEntry;
-import com.ysrbdlgn.audioconverter.common.event.ConversionEvent;
-import com.ysrbdlgn.audioconverter.common.event.EventBus;
+import com.ysrbdlgn.audioconverter.converter.ConverterBuilder;
 import com.ysrbdlgn.audioconverter.converter.listener.ConvertFileProgressListener;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
@@ -22,18 +21,14 @@ public class ConverterExecService<T> extends Service<T> {
 
     protected Task<T> createTask() {
 
-        return new Task<T>() {
+        ConverterBuilder builder = new ConverterBuilder()
+                .input(entry.getPath())
+                .output("E:\\test_mp3\\")
+                .outputType(EFileType.WAV)
+                .progressListener(convertFileProgressListener);
 
-            protected T call() throws Exception {
-                EventBus eventBus = EServiceLocator.INSTANCE.getService(EventBus.class);
+        return new ConverterTask<T>(builder, entry);
 
-                eventBus.fireEvent(new ConversionEvent(ConversionEvent.STARTED, entry));
-                converter.convert(entry.getPath(), destination, convertFileProgressListener);
-                eventBus.fireEvent(new ConversionEvent(ConversionEvent.DONE, entry));
-
-                return null;
-            }
-        };
     }
 
     public void setEntry(FileTableEntry entry) {

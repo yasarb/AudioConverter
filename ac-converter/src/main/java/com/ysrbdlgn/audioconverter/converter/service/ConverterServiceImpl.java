@@ -29,7 +29,7 @@ public class ConverterServiceImpl implements ConverterService {
     }
 
     @Override
-    public void convert(FileTableEntry entry, String destination) throws JavaLayerException {
+    public void convert(FileTableEntry entry, String destination) {
 
         ConverterExecService<Void> converterExecService = new ConverterExecService<>();
         converterExecService.setExecutor(executorService);
