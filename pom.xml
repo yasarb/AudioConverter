@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <spring.version>4.2.2.RELEASE</spring.version>
+        <spring.version>[4.3.17,)</spring.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
